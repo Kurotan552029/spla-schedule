@@ -274,9 +274,28 @@ export default function App() {
                             </button>
                           </td>
                         ))}
-                      </tr>
-                    );
-                  })}
+
+                        {/* ここが削除ボタン列 */}
+        <td style={{ padding: 8 }}>
+          <button
+            onClick={() =>
+              setSchedules((prev) => prev.filter((x) => x.id !== s.id))
+            }
+            style={{
+              background: "#ef4444",
+              color: "white",
+              border: "none",
+              padding: "6px 10px",
+              borderRadius: 6,
+              fontWeight: 600,
+            }}
+          >
+            削除
+          </button>
+        </td>
+      </tr>
+    );
+  })}
                 </tbody>
               </table>
             </div>
